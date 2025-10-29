@@ -4,6 +4,9 @@ const SPEED = 100.0
 const TURN_ACCELERATION = 1200.0
 const ROLL_SPEED = 140.0
 
+# --- Death variable
+var is_dying = false
+
 # --- NEW JUMP CONSTANTS ---
 # This is the constant upward speed of the "jetpack" jump.
 const JUMP_SPEED = 140.0 
@@ -116,8 +119,10 @@ func _physics_process(delta):
 		Anim.flip_h = true
 	elif direction == 1:
 		Anim.flip_h = false
-
-	if is_rolling:
+	
+	if is_dying:
+		Anim.play("death")
+	elif is_rolling:
 		if Anim.animation != "roll":
 			Anim.play("roll")
 	else:
@@ -138,4 +143,5 @@ func _on_animated_sprite_2d_animation_finished():
 
 
 func death():
-	$CollisionShape2D.disabled = true
+	is_dying = true
+	$CollisionShape2D.queue_free()
