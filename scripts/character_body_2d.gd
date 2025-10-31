@@ -43,9 +43,13 @@ func _input(event):
 	
 	if event.is_released():
 		direction_stack.erase(direction_value)
-
+func _ready():
+	if(GlobalStuff.total_deaths>3 and GlobalStuff.flag==0):
+		
+		GlobalStuff.flag=1
+		spawnnew()
+		
 func _physics_process(delta):
-	
 	# --- NEW JETPACK JUMP & GRAVITY LOGIC ---
 	
 	# 1. Apply gravity *first*.
@@ -141,7 +145,9 @@ func _on_animated_sprite_2d_animation_finished():
 		is_rolling = false
 		velocity.x = 0
 
-
+func spawnnew():
+	position.x=560
+	position.y=-124
 func death():
+	GlobalStuff.add_deaths()
 	is_dying = true
-	$CollisionShape2D.queue_free()

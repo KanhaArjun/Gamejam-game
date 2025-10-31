@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://c51443b7oug6r"]
+
+[ext_resource type="Texture2D" uid="uid://36ybfjo4a8dt" path="res://assets/sprites/Fire-Pixel-Art-Animation-Sprites.png" id="1_52nqi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqmqg"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(24, 15, 248, 252)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5mbl"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(272, 15, 248, 252)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rach5"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(520, 15, 248, 252)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txieb"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(768, 15, 248, 252)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l61p"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(1016, 15, 248, 252)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10wrr"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(1264, 15, 248, 252)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_theev"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqmqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5mbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rach5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txieb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l61p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10wrr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_theev")
+frame_progress = 0.193246
