@@ -54,4 +54,5 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_theev")
-frame_progress = 0.193246
+frame = 3
+frame_progress = 0.229969
